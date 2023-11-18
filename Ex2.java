@@ -19,11 +19,11 @@ public class Program {
         }
 
         double sum = 0.0;
-        for (int i = 0; i < vect.length; i++) {
+        for (int i = 0; i < n; i++) {
             sum += vect[i].getPrice();
         }
         
-        double avg = sum / vect.length;
+        double avg = sum / n;
         System.out.printf("AVERAGE PRICE = %.2f%n", avg);
         
         sc.close();
