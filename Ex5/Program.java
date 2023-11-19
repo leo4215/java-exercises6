@@ -34,7 +34,7 @@ public class Program {
                 minors++;
             }
         }
-        double percentage = (minors / vect.length) * 100;
+        double percentage = (double) minors / vect.length) * 100;
         System.out.println("People younger than 16 years old: " + percentage + "%");
         for (int i = 0; i < vect.length; i++){ 
             if (vect[i].getAge() < 16){
