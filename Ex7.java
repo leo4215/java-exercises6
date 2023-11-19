@@ -2,7 +2,7 @@
 
 import java.util.Scanner;
 
-public class Ex6 {
+public class Ex7 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("How many number are you digiting? ");
