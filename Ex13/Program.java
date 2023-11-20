@@ -26,9 +26,7 @@ public class Program {
             if (vect[i].getHeight() > maxHeight){
                 maxHeight = vect[i].getHeight();
             }
-        }
-
-        for (int i = 0; i < vect.length; i++){
+            
             if (vect[i].getGender() == 'M'){
                 menQuantity++;
             } else {
