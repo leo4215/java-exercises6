@@ -16,9 +16,9 @@ public class Program {
         }
 
         System.out.println("NEGATIVE NUMBERS:");
-        for (int i = 0; i <vect.length; i++){
-            if (vect[i] < 0){
-                System.out.printf("%d\n", vect[i]);
+        for (int i : vect){
+            if (i < 0){
+                System.out.printf("%d\n", i);
             }
         }
         sc.close();
