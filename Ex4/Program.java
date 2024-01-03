@@ -19,12 +19,9 @@ public class Program {
         }
 
         System.out.print("\nVALUES = ");
-        for (int i = 0; i < vect.length; i++){
-            System.out.printf("%.1f ", vect[i]);
-        }
-
-        for (int i = 0; i < vect.length; i++){
-            sum += vect[i];
+        for (double i : vect){
+            System.out.printf("%.1f ", i);
+            sum += i;
         }
         avg = sum / vect.length;
 
