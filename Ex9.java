@@ -8,24 +8,22 @@ public class Ex9 {
 
         System.out.print("How many values will each vector have? ");
         int n = sc.nextInt();
-
+        
         double[] vect = new double[n];
-
+        double sum = 0, avg;
+        
         for (int i = 0; i < vect.length; i++) {
             System.out.print("Enter a number: ");
             vect[i] = sc.nextDouble();
-        }
-
-        double sum = 0, avg;
-        for (int i = 0; i < vect.length; i++) {
             sum += vect[i];
         }
+        
         avg = sum / vect.length;
         System.out.printf("\nVECTOR AVERAGE = %.3f\n", avg);
         System.out.println("ELEMENTS UNDER THE AVERAGE:");
-        for (int i = 0; i < vect.length; i++) {
-            if (vect[i] < avg) {
-                System.out.println(vect[i]);
+        for (double i : vect) {
+            if (i < avg) {
+                System.out.printf("%.1f\n", i);
             }
         }
 
