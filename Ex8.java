@@ -28,8 +28,8 @@ public class Ex8 {
         }
 
         System.out.println("RESULTING VECTOR:");
-        for (int i = 0; i < c.length; i++){
-            System.out.printf("%d\n", c[i]);
+        for (int i : c){
+            System.out.printf("%d\n", i);
         }
 
         sc.close();
