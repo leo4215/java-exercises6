@@ -9,14 +9,11 @@ public class Ex10 {
         int even = 0, n = sc.nextInt();
 
         int[] vect = new int[n];
-
+        double sum = 0, avg;
+        
         for (int i = 0; i < vect.length; i++){
             System.out.print("Enter a number: ");
             vect[i] = sc.nextInt();
-        }
-
-        double sum = 0, avg;
-        for (int i = 0; i < vect.length; i++){
             if (vect[i] % 2 == 0) {
                 sum += vect[i];
                 even++;
