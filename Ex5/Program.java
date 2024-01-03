@@ -3,6 +3,7 @@
 import java.util.Scanner;
 
 public class Program {
+    public class Program {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("How many people are you entering? ");
@@ -23,22 +24,20 @@ public class Program {
             vect[i] = new People(name, age, height);
         }
 
-        for (int i = 0; i < vect.length; i++){
-            sum += vect[i].getHeight();
-        }
-        avg = sum / vect.length;
-        System.out.printf("\nAverage height: %.2f\n", avg);
-
-        for (int i = 0; i < vect.length; i++){ 
-            if (vect[i].getAge() < 16){
+        for (People i : vect){
+            sum += i.getHeight();
+            if (i.getAge() < 16){
                 minors++;
             }
         }
-        double percentage = (double) minors / vect.length) * 100;
+        avg = sum / vect.length;
+        double percentage = (double) minors / vect.length * 100;
+        
+        System.out.printf("\nAverage height: %.2f\n", avg);
         System.out.println("People younger than 16 years old: " + percentage + "%");
-        for (int i = 0; i < vect.length; i++){ 
-            if (vect[i].getAge() < 16){
-                System.out.println(vect[i].getName());
+        for (People i : vect){ 
+            if (i.getAge() < 16){
+                System.out.println(i.getName());
             }
         }
         sc.close();
