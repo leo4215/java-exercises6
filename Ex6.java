@@ -16,19 +16,14 @@ public class Ex6 {
         }
 
         System.out.println("\nEVEN NUMBERS: ");
-        for (int i = 0; i < vect.length; i++){
-            if (vect[i] % 2 == 0){
-                System.out.printf("%d ", vect[i]);
-            }
-        }
-
-        for (int i = 0; i < vect.length; i++){
-            if (vect[i] % 2 == 0){
+        for (int i : vect){
+            if (i % 2 == 0){
+                System.out.printf("%d ", i);
                 even++;
             }
         }
-        System.out.println();
-        System.out.printf("EVEN NUMBERS QUANTITY: %d", even);
+        
+        System.out.printf("%n\nEVEN NUMBERS QUANTITY: %d", even);
         sc.close();
     }
 }
