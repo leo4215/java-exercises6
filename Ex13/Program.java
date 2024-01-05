@@ -6,40 +6,39 @@ public class Program {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("How many people are you entering? ");
-        int menQuantity = 0, womenQuantity = 0, n = sc.nextInt();
-
+        int n = sc.nextInt(), menQtt = 0, womenQtt = 0;
+        
         People[] vect = new People[n];
 
         for (int i = 0; i < vect.length; i++){
-            System.out.printf("Person %d height: ", i + 1);
+            System.out.printf("Height of person %d: ", i + 1);
             double height = sc.nextDouble();
-            System.out.printf("Person %d gender: ", i + 1);
+            System.out.printf("Gender of person %d: ", i + 1);
             char gender = sc.next().charAt(0);
             vect[i] = new People(height, gender);
         }
-
-        double minHeight = vect[0].getHeight(), maxHeight = vect[0].getHeight(), sum = 0, avg;
-        for (int i = 0; i < vect.length; i++){
-            if (vect[i].getHeight() < minHeight){
-                minHeight = vect[i].getHeight();
+        
+        double minHeight = vect[0].getHeight(), maxHeight = vect[0].getHeight(), sum = 0;
+        for (People i : vect){
+            if (i.getHeight() < minHeight){
+                minHeight = i.getHeight();
             }
-            if (vect[i].getHeight() > maxHeight){
-                maxHeight = vect[i].getHeight();
+            if (i.getHeight() > maxHeight){
+                maxHeight = i.getHeight();
             }
-            
-            if (vect[i].getGender() == 'M'){
-                menQuantity++;
+            if (i.getGender() == 'M'){
+                menQtt++;
             } else {
-                sum += vect[i].getHeight();
-                womenQuantity++;
+                sum += i.getHeight();
+                womenQtt++;
             }
         }
-        avg = sum / womenQuantity;
-        System.out.printf("\nShortest person: %.2f\n", minHeight);
-        System.out.printf("Tallest person: %.2f\n", maxHeight);
-        System.out.printf("Average women height: %.2f\n", avg);
-        System.out.printf("Number of men: %d", menQuantity);
-
+        double avg = sum / womenQtt;
+        
+        System.out.printf("Shortest height = %.2f\n", minHeight);
+        System.out.printf("Tallest height = %.2f\n", maxHeight);
+        System.out.printf("Average women height = %.2f\n", avg);
+        System.out.printf("Quantity of men = %d\n", menQtt);
         sc.close();
     }
 }
