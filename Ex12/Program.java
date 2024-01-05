@@ -20,10 +20,10 @@ public class Program {
         }
         
         System.out.println("\nStudents that passed:");
-        for (int i = 0; i < vect.length; i++){
-            double finalGrade = (vect[i].getGrade1() + vect[i].getGrade2()) / 2;
+        for (Student i : vect){
+            double finalGrade = (i.getGrade1() + i.getGrade2()) / 2;
             if (finalGrade >= 6){
-                System.out.printf("%s\n", vect[i].getName());
+                System.out.printf("%s\n", i.getName());
             } 
         }
         sc.close();
