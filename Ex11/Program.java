@@ -6,29 +6,31 @@ public class Program {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("How many people are you entering? ");
-        int maxAgeIndex = 0, n = sc.nextInt();
+        int n = sc.nextInt(), index = 0;
 
-        People[] vect = new People[n];
+        String[] name = new String[n];
+        int[] age = new int[n];
 
-        for (int i = 0; i < vect.length; i++){
-            sc.nextLine();
+        int oldest = age[0];
+        for (int i = 0; i < n; i++) {
             System.out.printf("Person %d data:\n", i + 1);
+            sc.nextLine();
             System.out.print("Name: ");
-            String name = sc.nextLine();
+            String names = sc.nextLine();
             System.out.print("Age: ");
-            int age = sc.nextInt();
-            vect[i] = new People(name, age);
+            int ages = sc.nextInt();
+            name[i] = names;
+            age[i] = ages;
         }
 
-        int maxAge = vect[0].getAge();
-        for (int i = 0; i < vect.length; i++){
-            if (vect[i].getAge() > maxAge){
-                maxAge = vect[i].getAge();
-                maxAgeIndex = i;
+        for (int i = 0; i < n; i++) {
+            if (age[i] > oldest) {
+                oldest = age[i];
+                index = i;
             }
-        }
+        } 
 
-        System.out.printf("OLDEST PERSON: " + vect[maxAgeIndex].getName());
+        System.out.printf("OLDEST PERSON: %s", name[index]);
         sc.close();
     }
 }
